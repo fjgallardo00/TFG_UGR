@@ -1,5 +1,7 @@
 # TFG_UGR
-## Curso 2022 - 2023
-### Francisco Javier Gallardo Molina
+## Francisco Javier Gallardo Molina Curso 2022 - 2023
+### Aplicación de Algoritmos de Optimización basada en Colonias de Hormigas (ACO) dentro de un simulador de red para la optimización de problemas en Redes Definidas por Software (SDN)
 
-Repositorio donde desarrollar el TFG
+Este proyecto propone el diseño y aplicación de un Algoritmo de Optimización basada en Colonias de Hormigas (OCH o ACO en inglés) para la optimización dinámica de las rutas que debe seguir el tráfico necesario para componer servicios de red dentro de una red definida por software (SDN) desplegada dentro de un simulador realista, como es MiniNet. Estas redes, basadas en mecanismos como la virtualización de funciones de red (NFV), demandan determinadas condiciones e imponen ciertas restricciones que deberán ser consideradas por el OCH implementado.
+
+Este tipo de metaheurísticas están diseñadas para resolver problemas de optimización dentro de grafos, por lo que se deberá plantear un problema de este tipo, que incorporará las restricciones necesarias para hacerlo lo más fiel a la realidad posible. Así pues se tendrán en cuenta factores dinámicos como el balanceo de carga en los nodos de la red, o las cadenas de servicios virtuales (SFC, Service Function Chaining) de la red de acceso.

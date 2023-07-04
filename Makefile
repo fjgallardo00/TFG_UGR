@@ -1,8 +1,10 @@
+all: build run
+
 build:
 	docker build -t mininet .
 
 run:
-	docker run -it --name prueba-mininet mininet
+	docker run --privileged --network host -it --name prueba-mininet mininet
 
 start:
 	docker start -i prueba-mininet
@@ -18,6 +20,9 @@ delete-image:
 
 ps:
 	docker ps -a
+
+copy:
+	docker cp app/. prueba-mininet:/home/app
 
 clean: stop delete
 

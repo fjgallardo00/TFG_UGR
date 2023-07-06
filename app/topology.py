@@ -1,4 +1,5 @@
 from mininet.topo import Topo
+from mininet.link import TCLink
 
 class TutorialTopologyOld( Topo ):
 
@@ -28,9 +29,27 @@ class TutorialTopology(Topo):
       new_host = self.addHost('h'+str(i))
       self.addLink(new_host, s2)
 
+    self.addLink(s1, s2, cls=TCLink, bw=50, delay='30ms', loss=10)
+
+class RealTopology(Topo):
+
+  def build(self):
+
+    h1 = self.addHost('h1')
+    h2 = self.addHost('h2')
+    h3 = self.addHost('h3')
+    h4 = self.addHost('h4')
+    s1 = self.addSwitch('s1')
+    s2 = self.addSwitch('s2')
+
+    self.addLink(h1, s1, cls=TCLink, bw=100)
+    self.addLink(h2, s1, cls=TCLink, delay='75ms')
+    self.addLink(h3, s1, cls=TCLink, loss=5)
+    self.addLink(h4, s2)
     self.addLink(s1, s2)
 
-
-# the topologies accessible to the mn tool's `--topo` flag
-# note: if using the Dockerfile, this must be the same as in the Dockerfile
-topos = { 'tutorialTopology': ( lambda: TutorialTopology() ) }
+topos = { 
+  'tutorialTopology': ( lambda: TutorialTopology() ),
+  'tutorialTopologyOld': (lambda: TutorialTopologyOld()),
+  'realTopology': (lambda: RealTopology())
+}

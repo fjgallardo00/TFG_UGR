@@ -1,0 +1,10 @@
+version: '3'
+services:
+    mininet-container:
+        build:
+            context: ./
+        privileged: true
+        volumes:
+            - ./app:/home/app
+        command: tail -f /dev/null
+            

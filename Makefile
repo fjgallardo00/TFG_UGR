@@ -1,5 +1,20 @@
-all: build run
+# Ordenes para trabajar con docker compose
+all: starting
 
+restart: down starting
+
+starting: up exec
+
+up:
+	docker compose up -d
+
+down:
+	docker compose down
+
+exec:
+	docker exec -ti tfg_ugr-mininet-container-1 bash
+
+# Ordenes para trabajar con un contenedor solo
 build:
 	docker build -t mininet .
 

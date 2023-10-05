@@ -1,44 +1,19 @@
 # Ordenes para trabajar con docker compose
-all: starting
+all: up
 
-restart: down starting
-
-starting: up exec
+restart: down up
 
 up:
-	docker compose up -d
+	docker compose up -d --remove-orphans
 
 down:
-	docker compose down
+	docker compose down --remove-orphans
 
-exec:
+exec-mininet:
 	docker exec -ti tfg_ugr-mininet-container-1 bash
 
-# Ordenes para trabajar con un contenedor solo
-build:
-	docker build -t mininet .
-
-run:
-	docker run --privileged --network host -it --name prueba-mininet mininet
-
-start:
-	docker start -i prueba-mininet
-
-stop:
-	docker stop prueba-mininet
-
-delete:
-	docker rm prueba-mininet
-
-delete-image:
-	docker rmi mininet
+exec-ryu:
+	docker exec -ti tfg_ugr-ryu-container-1 bash
 
 ps:
 	docker ps -a
-
-copy:
-	docker cp app/. prueba-mininet:/home/app
-
-clean: stop delete
-
-img-clean: clean delete-image

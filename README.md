@@ -1,7 +1,5 @@
 # TFG_UGR
-## Francisco Javier Gallardo Molina Curso 2022 - 2023
-### Aplicación de Algoritmos de Optimización basada en Colonias de Hormigas (ACO) dentro de un simulador de red para la optimización de problemas en Redes Definidas por Software (SDN)
+## Francisco Javier Gallardo Molina Curso 2023 - 2024
+### Diseño y estudio de una Red Definida por Software (SDN) adaptativa usando software de simulación
 
-Este proyecto propone el diseño y aplicación de un Algoritmo de Optimización basada en Colonias de Hormigas (OCH o ACO en inglés) para la optimización dinámica de las rutas que debe seguir el tráfico necesario para componer servicios de red dentro de una red definida por software (SDN) desplegada dentro de un simulador realista, como es MiniNet. Estas redes, basadas en mecanismos como la virtualización de funciones de red (NFV), demandan determinadas condiciones e imponen ciertas restricciones que deberán ser consideradas por el OCH implementado.
-
-Este tipo de metaheurísticas están diseñadas para resolver problemas de optimización dentro de grafos, por lo que se deberá plantear un problema de este tipo, que incorporará las restricciones necesarias para hacerlo lo más fiel a la realidad posible. Así pues se tendrán en cuenta factores dinámicos como el balanceo de carga en los nodos de la red, o las cadenas de servicios virtuales (SFC, Service Function Chaining) de la red de acceso.
+Este proyecto propone la creación de una topología de Red Definida por Software (SDN) sobre un software de simulación o virtualización de la misma, como es MININET. Del mismo modo, se utilizará un controlador externo como puede ser RYU, el cual se configurará para gestionar la SDN de manera dinámica, siendo capaz de adaptar el funcionamiento de la misma en condiciones desfavorables para mantener unas prestaciones ideales. Dicha adaptación se estudiará en varios escenarios/topologías y se plantearán diversas casuísticas a gestionar en cada uno. Se hará un estudio del comportamiento de la SDN y de su controlador, observando alguna variable de salida representativa, como puede ser el Throughput de la red o el retardo medio de los paquetes  al atravesarla.

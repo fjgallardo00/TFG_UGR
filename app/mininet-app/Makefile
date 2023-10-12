@@ -7,7 +7,7 @@ exe:
 	sudo mn --custom ./network.py --topo NetworkTopo --controller=remote,ryu-container
 
 python:
-	python3 network.py
+	python3 mininet-network.py
 
 start:
 	sudo mn --custom ./topology.py --topo tutorialTopology

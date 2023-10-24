@@ -1,0 +1,26 @@
+version: '3'
+services:
+    mininet-container:
+        build:
+            context: ./
+        privileged: true
+        volumes:
+            - ./app:/home/app
+        command: tail -f /dev/null
+        networks:
+          - default-mininet
+
+    ryu-container:
+      build:
+          context: ./
+          dockerfile: Dockerfile.ryu
+      privileged: true
+      volumes:
+          - ./app:/home/app
+      command: tail -f /dev/null
+      networks:
+        - default-mininet
+
+networks:
+  default-mininet:
+    driver: bridge

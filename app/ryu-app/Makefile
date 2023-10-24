@@ -1,4 +1,4 @@
-all: install-ryu install-networkx exe
+all: install-ryu install-networkx
 
 install-ryu:
 	sudo pip install ./ryu/

@@ -17,3 +17,6 @@ exec-ryu:
 
 ps:
 	docker ps -a
+
+restart-systemctl:
+	sudo systemctl restart docker.service docker.socket
